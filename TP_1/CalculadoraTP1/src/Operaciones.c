@@ -1,39 +1,39 @@
 
 #include "Operaciones.h"
 
-int Suma(int numero1, int numero2)
+float Suma(float numero1, float numero2)
 {
-	int resultado;
+	float resultado;
 
 	resultado= numero1 + numero2;
 
 	return resultado;
 }
 
-int Resta(int numero1, int numero2)
+float Resta(float numero1, float numero2)
 {
-	int resultado;
+	float resultado;
 
 	resultado = numero1 - numero2;
 
 	return resultado;
 }
 
-long long int Multiplicacion(int numero1, int numero2)
+double Multiplicacion(float numero1, float numero2)
 {
-	long long int resultado;
+	double resultado;
 
-	resultado= (long long)numero1 * numero2;
+	resultado= (double)numero1 * numero2;
 
 	return resultado;
 }
 
-int Division(float* division, int numero1, int numero2)
+int Division(float* division, float numero1, float numero2)
 {
 	int respuesta;
 	if(numero2 != 0)
 	{
-		*division= (float)numero1/numero2;
+		*division= numero1/numero2;
 		respuesta=0;
 	}
 	else
@@ -55,17 +55,12 @@ double CalcularFactorial(int numero)
 	}
 	else
 	{
-		if(numero<0)
-		{
-			numero=numero*(-1);
-			resultado = numero * CalcularFactorial(numero - 1);
-		}
-		else
-		{
-			resultado = numero * CalcularFactorial(numero - 1);
-		}
+
+		resultado = numero * CalcularFactorial(numero - 1);
+
 	}
 
 
 	return resultado;
 }
+

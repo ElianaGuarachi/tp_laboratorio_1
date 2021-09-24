@@ -9,39 +9,40 @@
 #define OPERACIONES_H_
 #include <stdio.h>
 
-/// @fn int Suma(int, int)
-/// @brief Funcion que realiza la suma entre dos sumandos
-/// @param numero1 Numero que recibe por parametro para ser el primer sumando
-/// @param numero2 Numero que recibe por parametro para ser el segundo sumando
+/// @fn float Suma(float, float)
+/// @brief Funcion que resuelve la suma entre dos operandos
+/// @param numero1 Copia del primer operando
+/// @param numero2 Copia del segundo operando
 /// @return Devuelve el resultado de la suma
-int Suma(int numero1, int numero2);
+float Suma(float numero1, float numero2);
 
-/// @fn int Resta(int, int)
-/// @brief  Funcion que realiza la resta entre dos numeros
-/// @param numero1 Numero que recibe por parametro para ser el primer operador de la resta
-/// @param numero2 Numero que recibe por parametro para ser el segundo operador de la rest
+/// @fn float Resta(float, float)
+/// @brief Funcion que resuelve la resta entre dos operandos
+/// @param numero1 Copia del primer operando
+/// @param numero2 Copia del segundo operando
 /// @return Devuelve el resultado de la resta
-int Resta(int numero1, int numero2);
+float Resta(float numero1, float numero2);
 
-/// @fn long long int Multiplicacion(int, int)
-/// @brief Funcion que realiza la multiplicacion entre dos factores
-/// @param numero1 Copia del primer factor pasado por parametro
-/// @param numero2 Copia del segundo factor pasado por parametro
-/// @return
-long long int Multiplicacion(int numero1, int numero2);
+/// @fn double Multiplicacion(float, float)
+/// @brief funcion que se encarga de multiplicar dos numeros
+/// @param numero1 Copia del primero operando
+/// @param numero2 Copia del segundo operando
+/// @return Devuelve el resultado de la operacion
+double Multiplicacion(float numero1, float numero2);
 
-/// @fn int Division(float*, int, int)
-/// @brief Funcion que realiza la division entre dos numeros
-/// @param division direccion de memoria en donde se guardara el resultado de la division
-/// @param numero1 Copia del valor del numero que sera el dividendo
-/// @param numero2 Copia del valor del numero que sera el divisor
-/// @return devuelve como resultado un 1 o 0. Si es 1 la division no se realizo, si es 0 se pudo hacer
-int Division(float* division, int numero1, int numero2);
+/// @fn int Division(float*, float, float)
+/// @brief Funcion que realiza una division entre dos operandos
+/// @param division Direccion de memoria donde se guardara el resultado de la division si se pudo hacer
+/// @param numero1 Copia del primer operando
+/// @param numero2 Cppia del segundo operando
+/// @return Devuelve dos resultado: 1 si no se pudo hacer la division, y 0 si se puedo
+int Division(float* division, float numero1, float numero2);
 
 /// @fn double CalcularFactorial(int)
-/// @brief Funcion que calcula el factorial de un numero
-/// @param numero copia del numero al que se le realizara el factorial
-/// @return devuelve el resultado del calculo de factorial
-double CalcularFactorial( int numero);
+/// @brief Calcula el factorial de un numero entero positivo
+/// @param numero Copia del numero entero que recibe
+/// @return Devuelve el resultaod del calculo del factorial
+double CalcularFactorial(int numero);
+
 
 #endif /* OPERACIONES_H_ */

@@ -9,18 +9,25 @@
 #define BIBLIOTECA_H_
 
 #include <stdio.h>
+#include <ctype.h>
+
+/// @fn int MenuPrincipal(float, float)
+/// @brief Funcion que muestra el menu principal con las opciones a elegir para el usuario
+/// @param numero1 Copia del numero que recibe por parametro
+/// @param numero2 Copia del segundo numero que recibe por parametro
+/// @return devuelve la opcion elegida por el usuario
+int MenuPrincipal(float numero1, float numero2);
 
 /// @fn int PedirEntero(char[])
-/// @brief Funcion que solicita numeros enteros
-/// @param mensaje Cadena de caracteres que se recibe por parametro y que se mostrara para solicitar un numero
-/// @return devuelve el numero que ingresa el usuario
+/// @brief Funcion que pide un numero al usuario
+/// @param mensaje Mensaje que se paso por parametro para mostrarle al usuario
+/// @return Devuelve el numero entero que eligio el usuario
 int PedirEntero(char mensaje[]);
 
-/// @fn int MenuPrincipal(int, int)
-/// @brief Funcion que muestra todas las opciones del menu
-/// @param numero1 Numero que recibe por parametro para mostrar en una de la opciones
-/// @param numero2 Numero que recibe por parametro para mostrar en una de la opciones
-/// @return Devuelve la opcion de menu que selecciono el usuario
-int MenuPrincipal(int numero1, int numero2);
+/// @fn float PedirDecimal(char[])
+/// @brief Funcion que pide un numero decimal al usuario
+/// @param mensaje Mensaje que se paso por parametro para mostrarle al usuario
+/// @return Devuelve el numero decimal que eligio el usuario
+float PedirDecimal(char mensaje[]);
 
 #endif /* BIBLIOTECA_H_ */
