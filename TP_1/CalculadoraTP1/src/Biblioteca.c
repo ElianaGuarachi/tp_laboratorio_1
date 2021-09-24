@@ -15,7 +15,7 @@ int MenuPrincipal(float numero1, float numero2)
 	printf("4. Informar resultados\n");
 	printf("5. Salir\n");
 
-	opcion=PedirEntero("\nIngrese una opcion del menú: ", 1, 5);
+	opcion=PedirEntero("\nIngrese una opcion del menú: ");
 
 	return opcion;
 }
