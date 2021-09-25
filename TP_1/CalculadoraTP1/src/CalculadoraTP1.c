@@ -33,7 +33,6 @@ int main(void) {
 
 	do
 	{
-
 		opcion=MenuPrincipal(num1, num2);
 		switch(opcion)
 		{
@@ -117,8 +116,6 @@ int main(void) {
 				printf("\nUsted salio del programa");
 				break;
 
-			default:
-				printf("\nSeleccione una opcion del menu");
 		}
 	}while(opcion!=5);
 
