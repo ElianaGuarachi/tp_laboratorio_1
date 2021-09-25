@@ -35,6 +35,7 @@ int PedirEntero(int* pResultado, char mensaje[], char mensajeError[],int minimo,
 {
 
 	int retorno = -1;
+	char letra[50];
 	int bufferInt;
 
 	if(pResultado != NULL && mensaje != NULL && mensajeError != NULL && minimo<=maximo && reintentos>=0)
@@ -42,17 +43,23 @@ int PedirEntero(int* pResultado, char mensaje[], char mensajeError[],int minimo,
 		do
 		{
 			printf("%s", mensaje);
-			scanf("%d", &bufferInt);
-			if(bufferInt>=minimo && bufferInt<=maximo)
-			{
-				*pResultado=bufferInt;
-				retorno = 0;
-				break;
-			}
-			else
+			fflush(stdin);
+			scanf("%c", letra);
+
+			bufferInt=atoi(letra);
+			if(bufferInt==0)
 			{
 				printf("%s", mensajeError);
 				reintentos--;
+			}
+			else
+			{
+					if(bufferInt>=minimo && bufferInt<=maximo)
+					{
+						*pResultado=bufferInt;
+						retorno = 0;
+						break;
+					}
 			}
 
 		}while(reintentos >= 0);
@@ -67,10 +74,48 @@ float PedirDecimal(char mensaje[])
 	float numero;
 	if(mensaje!=NULL)
 	{
-
 		printf("%s", mensaje);
 		scanf("%f",&numero);
 	}
 
 	return numero;
+}
+
+void GetString(char mensaje[], char cadena[], int tam)
+{
+	char auxiliar[tam];
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%[^\n]", auxiliar);
+	strcpy(cadena, auxiliar);
+}
+
+int VerificarNumero(float* numero, int intentos)
+{
+	int retorno;
+	char numeroAuxiliar[50];
+	float bufferNumero;
+	retorno=1;
+
+	do{
+		GetString("\nIngrese operando: ", numeroAuxiliar, 50);
+		fflush(stdin);
+		bufferNumero = atof(numeroAuxiliar);
+
+		if(bufferNumero==0)
+		{
+			printf("\nError.");
+			intentos--;
+		}
+		else
+		{
+
+			*numero=bufferNumero;
+			retorno=0;
+			break;
+		}
+
+	}while(intentos>0);
+
+	return retorno;
 }

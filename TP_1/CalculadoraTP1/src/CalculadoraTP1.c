@@ -8,15 +8,15 @@
  ============================================================================
  */
 
-#include <stdlib.h>
 #include "Biblioteca.h"
 #include "Operaciones.h"
-
+#define TAM 30
 
 int main(void) {
 	setbuf(stdout, NULL);
 
 	int opcion;
+	int respuesta;
 	float num1;
 	float num2;
 	float resta;
@@ -37,11 +37,19 @@ int main(void) {
 		switch(opcion)
 		{
 			case 1:
-				num1=PedirDecimal("\nIngrese operando A: ");
+				respuesta = VerificarNumero(&num1, 2);
+				if(respuesta)
+				{
+					printf("\nDevuelta al menu principal");
+				}
 				break;
 
 			case 2:
-				num2=PedirDecimal("\nIngrese operando B: ");
+				respuesta = VerificarNumero(&num2, 2);
+				if(respuesta)
+				{
+					printf("\nDevuelta al menu principal");
+				}
 				break;
 
 			case 3:
@@ -86,22 +94,22 @@ int main(void) {
 				}
 				printf("\nd) El resultado de A*B es: %.2f", multiplicacion);
 
-				//Factorial
+				//Factorial (la calcula cientifica resuelve en numeros enteros negativo o positivos)
 				if((x==num1 && y==num2) || (x*-1==num1 && y==num2) || (x==num1 && y*-1==num2) || (x*-1==num1 && y*-1==num2))
 				{
-					printf("\ne) El factorial de A es: %.0f y El factorial de B es: %.0f\n", factorialA, factorialB);
+					printf("\ne) El factorial de A es: (+/-)%.0f y El factorial de B es: (+/-)%.0f\n", factorialA, factorialB);
 				}
 				else
 				{
 					if((x==num1 && y*-1>num2) || (x*-1==num1 && y<num2) || (x*-1==num1 && y*-1>num2) || (x==num1 && y<num2))
 					{
-						printf("\ne) El factorial de A es: %.0f y El factorial de B no se puede realizar porque es decimal\n", factorialA);
+						printf("\ne) El factorial de A es: (+/-)%.0f y El factorial de B no se puede realizar porque es decimal\n", factorialA);
 					}
 					else
 					{
 						if((y==num2 && x<num1) || (y*-1==num2 && x*-1>num1) || (y==num2 && x*-1>num1) || (y*-1==num2 && x<num1))
 						{
-							printf("\ne) El factorial de A no se puede realizar porque es decimal y El factorial de B es: %.0f\n", factorialB);
+							printf("\ne) El factorial de A no se puede realizar porque es decimal y El factorial de B es:  (+/-)%.0f\n", factorialB);
 						}
 						else
 						{

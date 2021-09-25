@@ -10,6 +10,8 @@
 
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 
 /// @fn int MenuPrincipal(float, float)
 /// @brief Funcion que muestra el menu principal con las opciones a elegir para el usuario
@@ -34,5 +36,19 @@ int PedirEntero(int* pResultado, char mensaje[], char mensajeError[],int minimo,
 /// @param mensaje Cadena de caracteres recibido por valor que pedira el numero decimal
 /// @return Devuelve el numero decimal ingresado por el usuario
 float PedirDecimal(char mensaje[]);
+
+/// @fn void GetString(char[], char[], int)
+/// @brief Funcion que pide el ingreso de caracteres
+/// @param mensaje Mensaje que recibe pidiendo que ingrese los caracteres
+/// @param cadena Aqui se va a almacenar la cadena de caracteres que se ingreso
+/// @param tam Pasaje por valor de la cantidad de caracteres que ingresa
+void GetString(char mensaje[], char cadena[], int tam);
+
+/// @fn int VerificarNumero(float*, int)
+/// @brief Funcion que verifica el ingreso de un numero, no permite letras
+/// @param numero Pasaje por parametro del lugar donde se va a almacenar el valor
+/// @param intentos Cantidad de veces que el usuario podra intentar ingresar un valor
+/// @return Devuelve 0 si se verifico, devuelve 1 si se agotaron los intentos
+int VerificarNumero(float* numero, int intentos);
 
 #endif /* BIBLIOTECA_H_ */
